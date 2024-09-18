@@ -2,7 +2,8 @@ import {Component, Inject, OnInit} from '@angular/core';
 import {ApiService} from '../../../services/api.service';
 import {ResponseInterface} from '../../../interfaces/response.interface';
 import {ResponsesService} from '../../../services/responses.service';
-import {LOCAL_STORAGE, WebStorageService} from 'ngx-webstorage-service';
+import {LOCAL_STORAGE, WebStorageService} from 'angular-webstorage-service';
+
 @Component({
     selector: 'app-form-in-body-results',
     templateUrl: './form-in-body-results.component.html',

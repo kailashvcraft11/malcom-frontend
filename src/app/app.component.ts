@@ -9,14 +9,15 @@ import {
     ViewChild,
     HostListener
 } from '@angular/core';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 
 import {NavigationService} from './services/navigation.service';
 import {PointsService} from './services/points.service';
 import {Subscription} from 'rxjs';
 import {ApiService} from './services/api.service';
 import {ResponseInterface} from './interfaces/response.interface';
-import {LOCAL_STORAGE, WebStorageService} from 'ngx-webstorage-service';import {AssignmentService} from './services/assignment.service';
+import {LOCAL_STORAGE, WebStorageService} from 'angular-webstorage-service';
+import {AssignmentService} from './services/assignment.service';
 import {LoginService} from './services/login.service';
 import {ActivatedRoute, Router, RoutesRecognized} from '@angular/router';
 

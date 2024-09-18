@@ -3,7 +3,10 @@ import {NavigationService} from '../services/navigation.service';
 import {Observable, Subscription} from 'rxjs';
 import {ApiService} from '../services/api.service';
 import {InputsService} from '../services/inputs.service';
-
+import 'rxjs/add/observable/of';
+import 'rxjs/add/operator/mapTo';
+import 'rxjs/add/operator/toPromise';
+import 'rxjs/add/operator/catch';
 
 import {Request} from '../request';
 import {Page} from '../page';
@@ -14,7 +17,7 @@ import {AssignmentService} from '../services/assignment.service';
 import {HttpClient} from '@angular/common/http';
 import {ContentImageViewerComponent} from '../components/content-image-viewer/content-image-viewer.component';
 import {DomSanitizer} from '@angular/platform-browser';
-import {MatSnackBar} from '@angular/material/snack-bar';
+import {MatSnackBar} from '@angular/material';
 
 // Not actually a feature flag, but a const for now.
 //
@@ -437,12 +440,11 @@ export class OnboardingComponent implements OnInit, AfterContentInit, OnDestroy 
      * @returns {Promise<boolean>}
      * @private
      */
-    private _getFileStatus(path: string, callback = null): any {
+    private _getFileStatus(path: string, callback = null): Promise<boolean> {
         return this._http.head(path)
-        // return this._http.head(path)
-        //     .mapTo(true)
-        //     .catch((error) => Observable.of(false))
-        //     .toPromise();
+            .mapTo(true)
+            .catch((error) => Observable.of(false))
+            .toPromise();
     }
 
     /**

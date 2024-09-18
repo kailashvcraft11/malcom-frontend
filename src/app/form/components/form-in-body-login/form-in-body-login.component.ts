@@ -1,8 +1,9 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {ApiService} from '../../../services/api.service';
 import {ResponseInterface} from '../../../interfaces/response.interface';
-import {MatSnackBar} from '@angular/material/snack-bar';
-import {LOCAL_STORAGE, WebStorageService} from 'ngx-webstorage-service';import {NavigationService} from '../../../services/navigation.service';
+import {MatSnackBar} from '@angular/material';
+import {LOCAL_STORAGE, WebStorageService} from 'angular-webstorage-service';
+import {NavigationService} from '../../../services/navigation.service';
 import {InputsService} from '../../../services/inputs.service';
 import {InBodyService} from '../../../services/inbody.service';
 

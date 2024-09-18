@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormGroup} from '@angular/forms';
 import {InputsService} from '../../../services/inputs.service';
-import {MatCheckboxChange} from '@angular/material/checkbox';
+import {MatCheckboxChange} from '@angular/material';
 
 @Component({
     selector: 'app-form-checkbox',

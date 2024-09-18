@@ -1,7 +1,8 @@
 import {Inject, Injectable} from '@angular/core';
 import {ApiService} from './api.service';
 import {ResponseInterface} from '../interfaces/response.interface';
-import {LOCAL_STORAGE, WebStorageService} from 'ngx-webstorage-service';import {MatSnackBar} from '@angular/material/snack-bar';
+import {LOCAL_STORAGE, WebStorageService} from 'angular-webstorage-service';
+import {MatSnackBar} from '@angular/material';
 import {Observable, Subject} from 'rxjs';
 
 @Injectable({

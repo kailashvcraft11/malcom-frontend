@@ -1,13 +1,14 @@
 import {Component, OnInit, Inject} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import {InputsService} from '../../../services/inputs.service';
 import {NavigationService} from '../../../services/navigation.service';
 import {ApiService} from '../../../services/api.service';
 import {forkJoin} from 'rxjs';
-import {MatSnackBar} from '@angular/material/snack-bar';
+import {MatSnackBar} from '@angular/material';
 import {ErrorMessage} from '../../../utils/error-message';
-import {LOCAL_STORAGE, WebStorageService} from 'ngx-webstorage-service';
+import {LOCAL_STORAGE, WebStorageService} from 'angular-webstorage-service';
+
 @Component({
     selector: 'app-form-schedule',
     templateUrl: './form-schedule.component.html',

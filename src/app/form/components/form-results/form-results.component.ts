@@ -3,7 +3,8 @@ import {FormGroup} from '@angular/forms';
 import {OnboardingComponent} from '../../../pages/onboarding.component';
 import {InputType} from '../../../enums/input-type';
 import {InputsService} from '../../../services/inputs.service';
-import {LOCAL_STORAGE, WebStorageService} from 'ngx-webstorage-service';import {ApiService} from '../../../services/api.service';
+import {LOCAL_STORAGE, WebStorageService} from 'angular-webstorage-service';
+import {ApiService} from '../../../services/api.service';
 
 interface Action {
     inputs?: any;

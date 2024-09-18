@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormGroup} from '@angular/forms';
 import {InputsService} from '../../../services/inputs.service';
-import {MatRadioChange} from '@angular/material/radio';
+import {MatRadioChange} from '@angular/material';
 
 @Component({
     selector: 'app-form-radio',

@@ -1,4 +1,4 @@
-// @import "../../../../assets/sass/mobile"
+@import "../../../../assets/sass/mobile"
 
 $selectWidth: 60%
 
@@ -27,7 +27,7 @@ section
     padding-bottom: 1em
     border-bottom: 1px solid #eaeaea
 
-   
+    @media #{$mat-xs}
       display: none !important
 
     > span
@@ -59,11 +59,11 @@ section
     width: calc((100% - #{$selectWidth}) - 100px)
     margin: 0
 
-   
+    @media #{$mat-xs}
       width: 100%
 
   .typeToggle
     margin-right: 1em
 
-   
+    @media #{$mat-xs}
       margin-right: 0

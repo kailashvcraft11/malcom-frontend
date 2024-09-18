@@ -45,15 +45,9 @@ import {MatSliderModule} from '@angular/material/slider';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatCardModule} from '@angular/material/card';
 import {MatDatepickerModule} from '@angular/material/datepicker';
-
+import {MatNativeDateModule, MatSnackBarModule, MatTableModule, MatTabsModule, MatTooltipModule} from '@angular/material';
 import {MatDialogModule} from '@angular/material/dialog';
 import {DragDropModule} from '@angular/cdk/drag-drop';
-import {MatTooltipModule} from '@angular/material/tooltip';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
-
-import {MatTableModule} from '@angular/material/table';
-import {MatTabsModule} from '@angular/material/tabs';
-
 import 'hammerjs';
 
 // Structure
@@ -64,7 +58,6 @@ import {FormInBodyResponseComponent} from './components/form-in-body-response/fo
 import {NgxChartsModule} from '@swimlane/ngx-charts';
 import {NgxMaskModule} from 'ngx-mask';
 import {AppModule} from '../app.module';
-import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
     imports: [

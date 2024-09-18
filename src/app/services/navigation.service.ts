@@ -1,7 +1,8 @@
 import {Inject, Injectable} from '@angular/core';
 import {Location} from '@angular/common';
 import {Observable, Subject} from 'rxjs';
-import {LOCAL_STORAGE, WebStorageService} from 'ngx-webstorage-service';import {InputsService} from './inputs.service';
+import {LOCAL_STORAGE, WebStorageService} from 'angular-webstorage-service';
+import {InputsService} from './inputs.service';
 import {ApiService} from './api.service';
 
 @Injectable({

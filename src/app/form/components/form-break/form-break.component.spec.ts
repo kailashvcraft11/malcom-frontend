@@ -10,6 +10,7 @@ describe('FormBreakComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ FormBreakComponent ]
     })
+    
     .compileComponents();
   }));
 

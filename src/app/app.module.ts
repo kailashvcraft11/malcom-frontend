@@ -4,12 +4,16 @@ import {HttpClientModule} from '@angular/common/http';
 import {CommonModule} from '@angular/common';
 import {RouterModule} from '@angular/router';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-
-import {MatProgressBarModule} from '@angular/material/progress-bar';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-
+import {
+    MatDialog,
+    MatDialogModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatSnackBar,
+    MatIconModule
+} from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
-// import { NgxWebstorageModule } from 'ngx-webstorage-service';
+import {StorageServiceModule} from 'angular-webstorage-service';
 
 import {AppRoutingModule} from './app-routing.module';
 import {DynamicFormModule} from './form/dynamic-form.module';
@@ -28,8 +32,6 @@ import {ImagePreloadDirective} from './image-preload.directive';
 import {ContentImageViewerComponent} from './components/content-image-viewer/content-image-viewer.component';
 import {DashboardComponent, DashboardLoginDialogComponent} from './pages/dashboard.component';
 import {FormLoginComponent} from './form/components/form-login/form-login.component';
-import { MatDialogModule } from '@angular/material/dialog';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 import { Angulartics2Module } from 'angulartics2';
 
@@ -42,11 +44,13 @@ import { Angulartics2Module } from 'angulartics2';
         AppRoutingModule,
         DynamicFormModule,
         HttpClientModule,
+        MatDialogModule,
         MatProgressBarModule,
         MatProgressSpinnerModule,
         FlexLayoutModule,
-        // NgxWebstorageModule.forRoot(),
-        MatDialogModule,
+        StorageServiceModule,
+        ReactiveFormsModule,
+        MatIconModule,
         Angulartics2Module.forRoot()
     ],
     exports: [
@@ -68,8 +72,8 @@ import { Angulartics2Module } from 'angulartics2';
         FormLoginComponent
     ],
     providers: [
-        MatDialogModule,
-        MatSnackBarModule,
+        MatDialog,
+        MatSnackBar,
         ResponsesService,
         PointsService,
         AssignmentService,
