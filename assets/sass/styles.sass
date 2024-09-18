@@ -1,0 +1,110 @@
+// Material theme
+@import '~@angular/material/theming'
+@include mat-core()
+$el-app-primary: (50 : #e3f7f9, 100 : #b9ecf1, 200 : #8bdfe7, 300 : #5cd2dd, 400 : #39c8d6, 500 : #16becf, 600 : #13b8ca, 700 : #10afc3, 800 : #0ca7bd, 900 : #0699b2, A100 : #dcf9ff, A200 : #a9f1ff, A400 : #76e9ff, A700 : #5de5ff, contrast: (50 : #ffffff, 100 : #ffffff, 200 : #ffffff, 300 : #ffffff, 400 : #ffffff, 500 : #ffffff, 600 : #ffffff, 700 : #ffffff, 800 : #ffffff, 900 : #ffffff, A100 : #ffffff, A200 : #ffffff, A400 : #ffffff, A700 : #ffffff))
+$el-app-accent: (50 : #f1f8e8, 100 : #ddeec5, 200 : #c6e39f, 300 : #afd779, 400 : #9ecf5c, 500 : #8dc63f, 600 : #85c039, 700 : #7ab931, 800 : #70b129, 900 : #5da41b, A100 : #ebffdb, A200 : #cfffa8, A400 : #b3ff75, A700 : #a5ff5c, contrast: (50 : #ffffff, 100 : #ffffff, 200 : #ffffff, 300 : #ffffff, 400 : #ffffff, 500 : #ffffff, 600 : #ffffff, 700 : #ffffff, 800 : #ffffff, 900 : #ffffff, A100 : #ffffff, A200 : #ffffff, A400 : #ffffff, A700 : #ffffff,))
+$el-app-palette-primary: mat-palette($el-app-primary)
+$el-app-palette-accent: mat-palette($el-app-accent)
+$el-app-palette-warn: mat-palette($mat-red)
+$el-theme: mat-light-theme($el-app-palette-primary, $el-app-palette-accent, $el-app-palette-warn)
+@include angular-material-theme($el-theme)
+
+// Doc Project colors, from Drew, as of 6/14/2020
+$doc-purple: #AF5396
+$doc-mauve: #F2806D
+$doc-gold: #FCDB07
+$doc-charcoal: #59595B
+$doc-green: #B2D463
+$doc-sand: #EFE6C4
+$doc-jade: #5C9286
+$doc-ocean: #69C4C3
+$doc-emerald: #8FCBC1
+$doc-sedulo-blue: #004959
+$doc-white: #FFFFFF  // not one of Drew's...
+
+// Individual colors
+$primary: $doc-purple
+$accent: $doc-gold
+
+// Font specs
+$doc-font-normal: 400
+$doc-font-semi: 600
+$doc-font-black: 800
+
+// Conform heights
+$header: 205px
+$topMargin: 35px
+$footer: 80px
+$main: calc(98vh - (#{$header} + #{$footer} + #{$topMargin}))
+
+
+// @import "~@angular/material/prebuilt-themes/indigo-pink.css"
+@import 'reset'
+@import 'mobile'
+@import 'fonts'
+@import 'header'
+@import 'footer'
+@import 'menu'
+@import 'inputs'
+@import 'body'
+@import 'theme'
+
+
+// TODO - I'm not sure where to put this.  We're settingg up a site-wide hack
+// for michaele so she can inject these buttons where-ever she wants, and I'm
+// not sure where the best place to put such a thing is.
+.doc-journey-button
+  // Sizing
+  width: 340px
+  max-width: 100%
+  min-height: 60px
+  // Appearance
+  font-size: 16px
+  font-weight: $doc-font-semi
+  background-color: $doc-white
+  color: $doc-sedulo-blue
+  opacity: 1.0
+  text-transform: uppercase
+  border: 2px solid $doc-sedulo-blue
+  border-radius: 2px
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+  // Center up to two lines of text, don't change box size.
+  box-sizing: border-box
+  text-align: center
+  display: flex
+  flex-direction: column
+  justify-content: center
+  // Out of spec, eyeballed, useful for long titles
+  padding-left: 10px
+  padding-right: 10px
+  // Help Michaele lay these out roughly to Drew's spec, automagically
+  margin: 10px auto
+
+.doc-journey-button:hover
+  border-color: $doc-sedulo-blue
+  background: $doc-sedulo-blue
+  color: $doc-white
+  opacity: .7
+
+.doc-journey-button:active
+  opacity: 1.0
+  box-shadow: none
+
+.doc-purple
+  background-color: $doc-purple
+.doc-mauve
+  background-color: $doc-mauve
+.doc-gold
+  background-color: $doc-gold
+.doc-charcoal
+  background-color: $doc-charcoal
+.doc-green
+  background-color: $doc-green
+.doc-sand
+  background-color: $doc-sand
+.doc-jade
+  background-color: $doc-jade
+.doc-ocean
+  background-color: $doc-ocean
+.doc-emerald
+  background-color: $doc-emerald
