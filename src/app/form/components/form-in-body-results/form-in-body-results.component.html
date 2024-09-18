@@ -1,0 +1,148 @@
+<mat-tab-group [dynamicHeight]="true">
+    <mat-tab label="Your Recent Results">
+        <mat-card class="message-container mat-elevation-z2" *ngIf="alert">
+            Your recent scan indicates that you may be at risk for diabetes. Please consult your physician as soon as possible.
+        </mat-card>
+        <div fxLayout="row" class="weight-container">
+            <h4>Your Weight: <span>{{ weight }}</span> <span><i class="icon-info"></i></span></h4>
+        </div>
+        <div class="result-container">
+            <div fxLayout="row">
+                <mat-card fxFlex="50">
+                    <mat-card-title>Segmental Lean Analysis <span><i class="icon-info"></i></span></mat-card-title>
+                    <ngx-charts-bar-horizontal-2d
+                            [results]="segmentLean"
+                            [yAxis]="true"
+                            [showYAxisLabel]="true"
+                            [view]="[310,200]"
+                            [customColors]="customColors"
+                            [roundEdges]="false"
+                            [showGridLines]="true">
+                    </ngx-charts-bar-horizontal-2d>
+                </mat-card>
+                <mat-card fxFlex="50">
+                    <mat-card-title>Segmental Fat Analysis <span><i class="icon-info"></i></span></mat-card-title>
+                    <ngx-charts-bar-horizontal-2d
+                            [results]="segmentFat"
+                            [yAxis]="true"
+                            [showYAxisLabel]="true"
+                            [view]="[310,200]"
+                            [customColors]="customColors"
+                            [roundEdges]="false">
+                    </ngx-charts-bar-horizontal-2d>
+                </mat-card>
+            </div>
+        </div>
+        <div fxLayout="row" class="body-composition">
+            <h2>Body Composition Analysis</h2>
+        </div>
+        <div class="result-container">
+            <div fxLayout="row">
+                <mat-card fxFlex="33.33">
+                    <mat-card-content>
+                        <div fxLayout="column" class="comp-content">
+                            <div fxLayout="column">
+                                <ngx-charts-bar-horizontal-stacked [results]="water" [view]="[225,50]" [yAxis]="true" [customColors]="waterColors"></ngx-charts-bar-horizontal-stacked>
+                            </div>
+                            <div fxFlex="row">
+                                <div fxFlex="75">ECW/TBW Ratio <span><i class="icon-info"></i></span></div>
+                                <div fxFlex="25">{{ ecwTBWRatio }}</div>
+                            </div>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+                <mat-card fxFlex="33">
+                    <mat-card-content>
+                        <div fxLayout="column" class="comp-content">
+                        <div fxFlex="row">
+                            <div fxFlex="75">Fat Mass <span><i class="icon-info"></i></span></div>
+                            <div fxFlex="25">{{ fatMass }} lbs</div>
+                        </div>
+                        <div fxFlex="row">
+                            <div fxFlex="75">Fat % <span><i class="icon-info"></i></span></div>
+                            <div fxFlex="25">{{ fatPercentage }}</div>
+                        </div>
+                        <div fxFlex="row">
+                            <div fxFlex="75">Visceral Fat <span><i class="icon-info"></i></span></div>
+                            <div fxFlex="25">{{ visceralFat }}</div>
+                        </div>
+                        <div fxFlex="row">
+                            <div fxFlex="75">Total Body Fat Mass <span><i class="icon-info"></i></span></div>
+                            <div fxFlex="25">{{ totalBodyFatMass }} lbs</div>
+                        </div>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+                <mat-card fxFlex="33">
+                    <mat-card-content>
+                        <div fxLayout="column" class="comp-content">
+                            <div fxFlex="row">
+                                <div fxFlex="75">Lean Mass <span><i class="icon-info"></i></span></div>
+                                <div fxFlex="25">{{ leanMass }} lbs</div>
+                            </div>
+                            <div fxFlex="row">
+                                <div fxFlex="75">Skeletal Muscle Mass <span><i class="icon-info"></i></span></div>
+                                <div fxFlex="25">{{ skeletalMuscleMass }}</div>
+                            </div>
+                            <div fxFlex="row">
+                                <div fxFlex="75">Lean Body Mass <span><i class="icon-info"></i></span></div>
+                                <div fxFlex="25">{{ leanBodyMass }}</div>
+                            </div>
+                            <div fxFlex="row">
+                                <div fxFlex="75">Dry Lean Mass <span><i class="icon-info"></i></span></div>
+                                <div fxFlex="25">{{ dryLeanMass }}</div>
+                            </div>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </mat-tab>
+    <mat-tab label="Scan Comparisons">
+        <table mat-table [dataSource]="scans" class="mat-elevation-z8">
+            <tr mat-header-row *matHeaderRowDef="scanColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: scanColumns;"></tr>
+
+            <ng-container matColumnDef="date">
+                <th mat-header-cell *matHeaderCellDef>Date</th>
+                <td mat-cell *matCellDef="let scan">{{ scan['TestDate/Time'] | inBodyDate }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="weight">
+                <th mat-header-cell *matHeaderCellDef>Weight</th>
+                <td mat-cell *matCellDef="let scan">{{ scan['Weight'] }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="skeletal_muscle_mass">
+                <th mat-header-cell *matHeaderCellDef>Skeletal Muscle Mass</th>
+                <td mat-cell *matCellDef="let scan">{{ scan['SMM(SkeletalMuscleMass)'] }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="percent_body_fat">
+                <th mat-header-cell *matHeaderCellDef>Percent Body Fat</th>
+                <td mat-cell *matCellDef="let scan">{{ scan['PBF(PercentBodyFat)'] }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="ecw_tbw">
+                <th mat-header-cell *matHeaderCellDef>ECW/TBW</th>
+                <td mat-cell *matCellDef="let scan">{{ scan['ECW/TBW'] }}</td>
+            </ng-container>
+        </table>
+    </mat-tab>
+    <mat-tab label="Your Messages">
+        <table mat-table [dataSource]="messages" class="mat-elevation-z8">
+            <tr mat-header-row *matHeaderRowDef="messageColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: messageColumns;"></tr>
+
+            <ng-container matColumnDef="date">
+                <th mat-header-cell *matHeaderCellDef>Date</th>
+                <td mat-cell *matCellDef="let message">{{ message.created_at | date: 'MM/dd/yyyy' }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="message">
+                <th mat-header-cell *matHeaderCellDef>Message</th>
+                <td mat-cell *matCellDef="let message">{{ message.notification.message }}</td>
+            </ng-container>
+        </table>
+    </mat-tab>
+</mat-tab-group>

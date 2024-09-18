@@ -1,0 +1,73 @@
+<section>
+
+  <h1>Your Dashboard</h1>
+  <h2>Select a category to begin your coaching session</h2>
+
+  <div *ngIf="assignments" fxLayout="row" fxLayout.xs='column' fxLayoutAlign="space-around center" id="categories">
+    <article *ngFor="let option of assignments">
+      <div [style.borderColor]="option.assignment.color" [class.recommended]="option.assignment.recommended" routerLink="/onboarding/{{getAccountId()}}/{{option.assignment.id}}/start"
+           class="circle">
+        <i
+                class="icon"
+                [style.mask]="option.assignment.logoPath ? option.assignment.logoPath : iconDefault"
+                [style.webkitMask]="option.assignment.logoPath ? option.assignment.logoPath : iconDefault"
+                [style.backgroundColor]="option.assignment.color"></i>
+      </div>
+      {{option.assignment.title}}
+    </article>
+  </div>
+
+  <div
+          fxLayout="row"
+          fxLayout.xs='column'
+          fxLayoutAlign="space-around start"
+          fxLayoutAlign.xs="space-around center"
+          fxFlexOrder.xs="1"
+          id="feed">
+
+    <!--<article *ngIf="config.options.includes('exercise-network')" [fxFlex]="columnWidth">-->
+      <!--<h3>Exercise Network</h3>-->
+      <!--<article>-->
+        <!--<div style="color: rgb(128, 195, 32)" class="circle">-->
+          <!--<i class="icon icon-trainingPartners"></i>-->
+        <!--</div>-->
+        <!--My Training Partners-->
+      <!--</article>-->
+    <!--</article>-->
+
+    <article fxFlex fxFlexOrder.xs="3" id="upcomingEvents">
+      <h3>Upcoming Events</h3>
+      <ul *ngIf="learning.length">
+        <li *ngFor="let post of learning">
+          <h4 [style.color]="post.color ? post.color : ''">{{post.title}}</h4>
+          {{convertUnixToDateTime(post.publish_at)}}<br>
+          {{post.location ? post.location : ''}}
+        </li>
+      </ul>
+      <span *ngIf="!learning.length">No events found.</span>
+    </article>
+
+    <article [fxFlex]="columnWidth" fxFlexOrder.xs="2">
+      <h3>Tools</h3>
+      <div fxLayout.xs='column'>
+        <article fxFlex="50">
+          <article>
+            <div style="color: rgb(121, 43, 137)" class="circle">
+              <i class="icon icon-inbody"></i>
+            </div>
+            InBody Scan<br><span class="uppercase">Results</span>
+          </article>
+        </article>
+        <article fxFlex="50">
+          <article>
+            <div style="color: rgb(121, 43, 137)" class="circle">
+              <i class="icon icon-fourcore"></i>
+            </div>
+            FourCore<br><span class="uppercase">Diagnosic</span>
+          </article>
+        </article>
+      </div>
+    </article>
+  </div>
+
+</section>

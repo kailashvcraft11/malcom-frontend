@@ -1,0 +1,64 @@
+.result-container
+  width: 95%
+  margin-left: 10px
+  margin-bottom: 10px
+
+.weight-container
+  padding-top: 10px
+
+.body-composition
+  margin-top: 25px
+
+.message-container
+  background-color: #FFF1C7
+  width: 93%
+  font-size: 14px
+  margin: auto
+  margin-bottom: 25px
+
+mat-card
+  width: 100%
+  margin-right: 10px
+
+  mat-card-title
+    text-align: left
+
+  &:nth-last-child
+    margin-right: 0
+
+  .comp-content
+    & > div
+      margin-bottom: 5px
+      margin-top: 5px
+
+      & div
+        text-align: left
+
+      & div:nth-child(1)
+        font-weight: bold
+
+span
+  position: relative
+
+table
+  width: 95%
+  margin: auto
+  margin-top: 25px
+  margin-bottom: 25px
+
+td, th
+  vertical-align: middle
+
+::ng-deep .mat-tab-header
+  border-bottom: 0 !important
+  margin-bottom: 25px
+
+::ng-deep th.mat-header-cell
+  text-align: center !important
+
+::ng-deep .ngx-charts .grid-panel.odd rect
+  fill: none !important
+
+::ng-deep .tick text
+  font-size: 14px !important
+  font-weight: bold

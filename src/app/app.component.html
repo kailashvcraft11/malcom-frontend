@@ -1,0 +1,28 @@
+<!--<header fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="10px">
+  <div class="headerTop" fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="10px">
+    <div fxFlex="1 0 auto">
+        <img src="{{ logo }}" id="logo" style="width:93px; height:56px"/>
+        <span *ngIf="sponsor">
+            presented by
+            <img src="{{ sponsorUrl }}" id="sponsor"/>
+        </span>
+    </div>
+    <div (click)="openMenu()" class="menu" fxLayout="row" fxFlex="1 0 auto" fxLayoutAlign="end start">
+        <span class="points" *ngIf="showPoints">{{ points }} points</span>
+        <div class="menuText">Menu</div>
+        <img class="hamburger" src="assets/images/icons/menu-white.svg" id="menu">
+    </div>
+  </div>
+
+  <div id="headerContent" fxLayoutAlign="end start">
+      <div id="headerPageTitle"></div>
+  </div>
+</header>-->
+
+<main>
+    <router-outlet></router-outlet>
+</main>
+
+<footer fxLayout="column" fxLayoutAlign="space-evenly center" fxLayoutGap="10px">
+    <!--<a href="#!">Get In Touch </a>-->
+</footer>

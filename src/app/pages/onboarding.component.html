@@ -1,0 +1,67 @@
+<div *ngIf="id">
+
+    <article fxLayout="column" fxLayoutGap="10px" id="wrapper" [ngClass]="classes">
+
+        <i *ngIf="back" (click)="pageBack()" class="icon-back">Back</i>
+
+        <img *ngIf="page.titleIcon" src="{{page.titleIcon}}" alt="{{page.title}}" class="title-icon"/>
+
+        <div *ngIf="hasContent" id="content">
+            <h1 id="pageTitle" *ngIf="false">{{page.title}}</h1> <!-- Hacking this off via *ngIf -->
+            <h2 *ngIf="page.subtitle" id="pageSubTitle">{{page.subtitle}}</h2>
+            <div *ngIf="page.content" [innerHtml]="page.content | safeHtml" id="pageContent"
+                 (click)="contentClick($event)"></div>
+        </div>
+
+        <div id="canvas">
+            <video #videoPlayer (ended)="mediaEnded()" (timeupdate)="checkInputStatus($event)"
+                   [class.short]="!skip && type !== 'video/mp4'">
+                <source src="{{media}}" type="{{type}}"/>
+                Browser not supported
+            </video>
+            <button
+                    *ngIf="replay && ! playing"
+                    (click)="replayMedia()"
+                    mat-raised-button
+                    type="submit"
+            >{{pauseVideoElement ? 'Play' : 'Replay'}} Animation
+            </button>
+        </div>
+
+<!-- HACK off the auto-generated buttons at the bottom of the page
+
+        <div id="inputs">
+            <app-dynamic-form
+                    [config]="page.inputs"
+            ></app-dynamic-form>
+        </div>
+-->
+        <div *ngIf="showControls" class="controls">
+            <button *ngIf="!playing" (click)="mediaPlay()" mat-fab color="primary" class="width-auto">
+                <mat-icon svgIcon="play" aria-hidden="false" aria-label="Play Media"></mat-icon>
+            </button>
+            <button *ngIf="playing" (click)="mediaPause()" mat-fab color="primary" class="width-auto">
+                <mat-icon svgIcon="pause" aria-hidden="false" aria-label="Pause Media"></mat-icon>
+            </button>
+            <button *ngIf="skip" (click)="mediaSkip()" mat-fab color="primary" class="width-auto">
+                <mat-icon svgIcon="skip_next" aria-hidden="false" aria-label="Skip Ahead"></mat-icon>
+            </button>
+        </div>
+
+    </article>
+
+    <!--<div class="progress-bar">-->
+        <!--<span>Progress: {{progress}}%</span>-->
+        <!--<mat-progress-bar [class.show]="progress > 0"-->
+                          <!--class="progress-bar"-->
+                          <!--color="primary"-->
+                          <!--mode="determinate"-->
+                          <!--[value]="progress">-->
+        <!--</mat-progress-bar>-->
+    <!--</div>-->
+
+</div>
+
+<div *ngIf="error" class="not-found text-center">
+    <h4>Oops! <span [innerHTML]="error"></span></h4>
+</div>

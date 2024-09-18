@@ -1,0 +1,165 @@
+form
+  margin: 1em 0
+
+  //input:not([type=button]):not([type=submit]):not([type=reset]), select, textarea
+  .mat-form-field, .mat-form-field-infix
+    width: 100%
+    max-width: 350px
+
+  .mat-form-field
+    margin-right: 1em
+    vertical-align: top
+
+  //.mat-radio-button:not(:last-of-type)
+  //  margin-right: 1.5em
+
+  .form-button
+    margin-bottom: 1em
+
+  .form-radio
+    margin-bottom: 1em
+
+  .mat-raised-button
+    color: $primary
+    margin-bottom: 1em
+
+  .mat-option
+
+    &[hidden]
+      display: none
+
+
+app-form-button
+
+  &:first-of-type
+
+    .mat-raised-button
+      margin-left: 0
+
+  + app-form-button
+
+    button.mat-raised-button:not([class*='mat-elevation-z'])
+      margin-left: 0.5em
+
+  .mat-raised-button
+    margin-left: 1em
+
+   
+      font-size: 12px
+      max-width: 100%
+      min-width: 0 !important
+      line-height: 1.5em
+      padding: 0.75em 1em
+
+      .mat-button-wrapper
+        white-space: normal
+
+  &:last-of-type
+
+    .mat-raised-button
+      margin-right: 0
+      margin: 0 auto
+
+app-form-break
+
+  + app-form-button
+
+    .mat-raised-button
+      margin-left: 0
+
+i.icon-back
+
+  + app-form-button
+
+    .mat-raised-button
+      margin-left: 0
+
+mat-datepicker-toggle
+
+  .mat-icon-button
+    min-width: 0 !important
+    position: absolute
+    right: 0
+    top: 0
+    width: 24px
+    height: 24px
+
+    .mat-datepicker-toggle-default-icon
+      vertical-align: text-bottom
+
+     
+        vertical-align: top
+
+mat-checkbox
+
+  .mat-checkbox-layout
+
+   
+      white-space: normal
+
+mat-tab-group
+
+  .mat-tab-body-content
+    overflow: hidden
+
+mat-radio-group
+
+  &.ng-touched.ng-invalid
+    color: #f44336
+
+mat-label
+  text-align: center
+  display: block
+
+  line-height: 24px
+  font-size: 14pt
+  font-weight: bold
+  margin-bottom: 1em
+
+.mat-table
+
+  .mat-header-cell, .mat-cell
+
+    &:first-child
+      text-align: left !important
+
+// NGX Charts
+.ngx-charts-outer
+  width: 100% !important
+
+.ngx-charts
+  margin-bottom: 2em
+  display: block
+  float: none !important
+  width: 100%
+
+  text
+    font-size: 18px !important
+    font-weight: bold
+
+  .grid-panel.odd rect
+    fill: transparent !important
+
+// Dialog theme overrides
+.mat-dialog-container
+
+  .mat-radio-outer-circle
+  border-color: rgba(0, 0, 0, 0.54) !important
+
+  .mat-checkbox-frame
+    border-color: rgba(0, 0, 0, 0.54) !important
+
+  .mat-slider-track-background
+    background-color: rgba(0, 0, 0, 0.26) !important
+
+  .mat-slider-min-value:not(.mat-slider-thumb-label-showing) .mat-slider-thumb
+    border-color: rgba(0, 0, 0, 0.26) !important
+
+  .mat-slider:hover .mat-slider-track-background, .cdk-focused .mat-slider-track-background
+    background-color: rgba(0, 0, 0, 0.38) !important
+
+  .mat-form-field-appearance-legacy .mat-form-field-underline
+    background-color: rgba(0, 0, 0, 0.42) !important
+
+  .mat-form-field-appearance-legacy .mat-form-field-label
+    color: rgba(0, 0, 0, 0.54) !important

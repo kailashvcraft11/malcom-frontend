@@ -1,0 +1,105 @@
+// @import "../../assets/sass/mobile"
+
+article
+
+  &:first-of-type
+    //max-height: 65vh
+    margin-bottom: 0
+
+  &#wrapper
+    text-align: center
+    max-width: 80%
+    margin: 0 auto
+    position: relative
+
+   
+      max-width: 100%
+      padding: 0 1em
+
+  img.title-icon
+    display: block
+    margin: 0 auto 2em
+    max-height: 250px
+    max-width: 100%
+
+    + #content h1
+      font-weight: bold
+      font-size: 30px
+      line-height: 1.25em
+      color: black
+
+     
+        line-height: 1.25em
+
+#pageSubTitle
+  //max-width: 75%
+  //min-width: 400px
+  //text-align: left
+  margin: 0 auto
+  line-height: 1.25em
+
+ 
+    margin: 0 auto 10px
+
+#canvas
+  $short: 0
+  $tall: 45vh
+  position: relative
+
+  video
+    height: $tall
+
+    &.short
+      text-align: center
+      max-height: $short
+
+  button
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+
+// Progress Bar
+.progress-bar
+  position: fixed
+  bottom: 0
+  left: 0
+  width: 100%
+  height: 20px
+
+  display: flex
+  align-items: center
+
+  > span
+    color: darken(#b9ecf1, 50%)
+    font-size: 10pt
+    font-weight: bold
+    padding: 5px
+    position: relative
+    z-index: 1
+
+.mat-progress-bar
+
+  &.show
+    transform: translate(0, 0)
+
+.controls
+  position: fixed
+  right: 1em
+  top: 50%
+  transform: translateY(-50%)
+
+  button
+    display: block
+    margin-bottom: 0.85em
+
+    &:last-of-type
+      margin-bottom: 0
+
+// Not Found
+.not-found
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  line-height: 2em

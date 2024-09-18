@@ -1,0 +1,95 @@
+=closeOut()
+  content: ''
+  display: inline-block
+  vertical-align: middle
+  height: 1em
+  width: 1em
+  background-image: url('../images/icons/close.svg')
+
+// Dialog Overlay
+.cdk-overlay-container
+
+  .cdk-overlay-backdrop.dark
+    background: rgba(121, 43, 138, 0.9)
+
+  .dashboard-menu
+
+    .mat-dialog-container
+      background: transparent
+      color: white
+      text-align: center
+      box-shadow: none
+
+     
+        padding: 15px 0
+
+      nav
+        font-weight: bold
+        font-size: 1.5em
+
+        ul
+          padding: 0
+          margin: 0
+
+          li
+            margin-bottom: 1em
+            font-size: 64px
+            text-transform: uppercase
+            outline: none
+
+           
+              font-size: 1.25em
+
+            &.active
+
+              a
+                color: lighten($primary, 0)
+
+            a
+              cursor: pointer
+              color: white
+              top: 0
+
+              transition: opacity 250ms ease, top 250ms ease
+
+              &:hover
+                opacity: 0.75
+                position: relative
+                top: -2px
+
+        .close
+          position: absolute
+          margin: 1em
+          opacity: 0
+          transition: opacity ease 250ms
+
+          &:before
+            +closeOut()
+            margin-right: 0.5em
+
+          &:after
+            display: none
+
+          &.show
+            opacity: 1
+
+      .close
+        cursor: pointer
+        color: white
+
+        position: absolute
+        top: 0
+        right: 0
+        margin: 18px
+
+        &:after
+          +closeOut()
+          margin-left: 0.5em
+
+    .mat-form-field-appearance-legacy
+
+      .mat-form-field-label
+        color: white
+
+      .mat-form-field-underline
+        background-color: rgba(255, 255, 255, 0.45)

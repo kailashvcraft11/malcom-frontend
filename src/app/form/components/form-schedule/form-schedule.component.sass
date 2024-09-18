@@ -1,0 +1,69 @@
+// @import "../../../../assets/sass/mobile"
+
+$selectWidth: 60%
+
+h3
+  font-size: 20px
+  margin-bottom: 0.5em
+
+section
+  text-align: center
+
+  &:first-of-type
+
+    > div
+      text-align: left
+
+  > button
+    margin-top: 1em
+
+  &.email
+
+    article > div
+      width: 100%
+
+  .header
+    margin-bottom: 1em
+    padding-bottom: 1em
+    border-bottom: 1px solid #eaeaea
+
+   
+      display: none !important
+
+    > span
+      margin-right: 1em
+      text-align: left
+      font-weight: bold
+
+      &:last-of-type
+        margin-right: 0
+
+  .mat-button-toggle-group
+    margin-top: 0.45em
+    width: 100%
+
+    .mat-button-toggle
+      width: 50%
+      text-align: center
+
+  .select-wrapper
+    width: $selectWidth
+    display: flex
+    align-items: flex-start
+
+    .form-select
+      width: 29%
+      margin-right: 2%
+
+  .form-input
+    width: calc((100% - #{$selectWidth}) - 100px)
+    margin: 0
+
+   
+      width: 100%
+
+  .typeToggle
+    margin-right: 1em
+
+   
+      margin-right: 0

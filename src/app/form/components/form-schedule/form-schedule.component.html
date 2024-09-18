@@ -1,0 +1,95 @@
+<!-- Schedule Input -->
+<section class="fieldset-wrapper extended">
+
+    <div>
+        <div
+                fxLayout="row"
+                fxLayoutAlign="space-evenly"
+                class="header">
+            <span fxFlex="25">Goal / Activity</span>
+            <span fxFlex="15">Day</span>
+            <span fxFlex="15">Time</span>
+            <span fxFlex="20">Location</span>
+            <span fxFlex="25">Invite Others</span>
+        </div>
+
+        <div
+                fxLayout="row"
+                fxLayout.xs="column"
+                fxLayoutAlign="space-evenly"
+                *ngFor="let row of rows; let i = index">
+
+            <mat-form-field fxFlex="25" class="dynamic-field form-select">
+                <mat-select
+                        *ngIf="!showOtherActivity"
+                        (selectionChange)="updateInput(); checkActivityOtherValue(i);"
+                        [placeholder]="placeholderActivityType"
+                        [(ngModel)]="rows[i].activity">
+                    <mat-option *ngFor="let option of fieldsetActivityType" [value]="option">
+                        {{ option }}
+                    </mat-option>
+                    <mat-option value="other">Other</mat-option>
+                </mat-select>
+                <input
+                        *ngIf="showOtherActivity"
+                        matInput
+                        type="text"
+                        name="other"
+                        (selectionChange)="updateInput()"
+                        placeholder="Other Activity Type"
+                        [(ngModel)]="rows[i].activity"
+                        ngDefaultControl>
+            </mat-form-field>
+
+            <mat-form-field fxFlex="15" class="dynamic-field form-select">
+                <mat-select
+                        (selectionChange)="updateInput()"
+                        [placeholder]="placeholderDay"
+                        [(ngModel)]="rows[i].day">
+                    <mat-option *ngFor="let option of fieldsetDays" [value]="option">
+                        {{ option }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field fxFlex="15" class="dynamic-field form-select">
+                <mat-select
+                        (selectionChange)="updateInput()"
+                        [placeholder]="placeholderTime"
+                        [(ngModel)]="rows[i].time">
+                    <mat-option *ngFor="let option of fieldsetTimes" [value]="option">
+                        {{ option }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field fxFlex="20" class="dynamic-field form-input">
+                <input
+                        matInput
+                        type="text"
+                        (selectionChange)="updateInput()"
+                        [placeholder]="placeholderLocale"
+                        [(ngModel)]="rows[i].location"
+                        ngDefaultControl/>
+            </mat-form-field>
+
+            <mat-form-field fxFlex="25" class="dynamic-field form-input">
+                <input
+                        matInput
+                        type="text"
+                        (selectionChange)="updateInput()"
+                        [placeholder]="placeholderEmails"
+                        [(ngModel)]="rows[i].invite"
+                        ngDefaultControl>
+                <mat-error *ngIf="emailGroupFormValidation && emailGroupFormValidation.hasError('email')">
+                    {{ emailGroupFormValidation.getError('email') }}
+                </mat-error>
+            </mat-form-field>
+
+        </div>
+        <i (click)="addNewRow()" class="icon-add">Add New</i>
+    </div>
+
+    <button mat-raised-button (click)="create()">Create Schedule</button>
+
+</section>

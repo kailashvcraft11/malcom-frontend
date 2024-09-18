@@ -1,0 +1,53 @@
+.cdk-drag-preview
+  opacity: 0.8
+  cursor: pointer
+  font-size: 0.85em
+
+  max-height: 41px
+  padding: 0.85em
+  list-style: none
+  border: 1px solid #eaeaea
+  border-top: none
+  background: white
+  box-shadow: 0 3px 5px rgba(0,0,0,.14)
+
+  span
+    position: relative
+    display: inline-block
+
+    i
+
+      &.icon-sort
+        height: 13px
+        width: 13px
+        margin: 0 0.5em 0 0
+        vertical-align: middle
+
+.inputs
+  margin-bottom: 2em
+
+  ul
+    margin-bottom: 1em
+    border-top: 1px solid #eaeaea
+    border-bottom: 1px solid #eaeaea
+
+    li
+      @extend .cdk-drag-preview
+      color: #16BECF
+      font-weight: 700
+      text-align: left
+      cursor: ns-resize
+
+      opacity: 1
+      padding: 1.15em
+      max-height: 9999px
+      position: relative
+      box-shadow: none
+
+      transition: box-shadow 250ms ease
+
+      &:last-of-type
+        border-bottom: none
+
+mat-label
+  text-align: left

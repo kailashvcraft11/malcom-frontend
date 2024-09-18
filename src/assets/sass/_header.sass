@@ -1,0 +1,96 @@
+$header-top-pad: 35px
+$subtitle-line-height: 38px
+
+header
+  height: $header
+  margin-bottom: $topMargin
+  padding-left: 30px
+  padding-right: 30px
+  padding-top: $header-top-pad
+  padding-bottom: $header - $header-top-pad - 4*$subtitle-line-height
+  font-size: 14px
+  // Repeat mountains in background of header...
+  background-color: $doc-purple
+  background-image: url('../images/Center_MountainsHeader.svg')
+  background-repeat: no-repeat
+  background-position: center top
+  background-size: 1200px 205px
+
+  > .headerTop
+    height: 2*$subtitle-line-height
+    width: 100%
+
+    > .menu
+      color: $doc-white
+      font-weight: normal
+      height: 20px
+      letter-spacing: 2px
+      font-weight: $doc-font-normal
+      font-style: bold
+      text-transform: uppercase
+      cursor: pointer
+
+      > .menuText
+        margin-right: .5em
+        height: 100%
+        line-height: 20px
+        text-align: center
+
+      span.points
+        margin-right: .5em
+        border-left: 0
+        border-right: 1px solid rgba(112, 112, 112, 0.3)
+        padding-right: 1em
+        height: 100%
+
+      > .hambuger
+        height: 100%
+
+  #logo
+    height: 30px
+    vertical-align: middle
+
+  #sponsor
+    height: auto
+
+  #menu
+    display: inline-block
+    vertical-align: middle
+
+  span
+    margin-left: 1em
+    padding-left: 1.5em
+    border-left: 1px solid rgba(112, 112, 112, 0.3)
+
+   
+      display: none
+
+    > img
+      vertical-align: middle
+      max-height: 100%
+      margin-left: 1em
+      max-width: 200px
+
+  #headerContent
+    height: 2*$subtitle-line-height
+
+  #headerPageTitle
+    margin-top: auto
+    color: $doc-white
+    font-size: 28px
+    max-width: 500px
+    font-weight: $doc-font-black
+    font-style: normal
+    display: -webkit-box
+    line-height: $subtitle-line-height
+    /* cut off at two lines max (line-clamp) */
+    overflow: hidden
+    text-overflow: ellipsis
+    /* Gawd.  Angular/sass strips old webkit directives without fancy magic. */
+    /* autoprefixer: off */
+    -webkit-box-orient: vertical
+    /* autoprefixer: on */
+    -webkit-line-clamp: 2
+
+
+
