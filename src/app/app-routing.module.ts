@@ -7,10 +7,11 @@ import {OnboardingComponent} from './pages/onboarding.component';
 import {DashboardComponent} from './pages/dashboard.component';
 
 const routes: Routes = [
-    {path: '', redirectTo: '/onboarding', pathMatch: 'full'},
+    {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
     {path: 'dashboard', component: DashboardComponent},
     {path: 'about', component: AboutUsComponent},
     {path: 'contact', component: ContactUsComponent},
+    
     {path: 'onboarding/:accountId/:flow/:id', component: OnboardingComponent},
     {path: 'onboarding/:accountId/:flow', component: OnboardingComponent},
     {path: 'onboarding/:accountId/', component: OnboardingComponent},

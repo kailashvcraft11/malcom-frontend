@@ -1,6 +1,7 @@
 import {Inject, Injectable} from '@angular/core';
 import {ApiService} from './api.service';
-import {LOCAL_STORAGE, SESSION_STORAGE, WebStorageService} from 'ngx-webstorage-service';import {ResponseInterface} from '../interfaces/response.interface';
+import {LOCAL_STORAGE, SESSION_STORAGE, WebStorageService} from 'angular-webstorage-service';
+import {ResponseInterface} from '../interfaces/response.interface';
 import {Observable, of, Subject} from 'rxjs';
 import {first} from 'rxjs/operators';
 

@@ -7,7 +7,7 @@ html, body
   color: $doc-charcoal
   line-height: 28px
 
- 
+  @media #{$mat-xs}
     font-size: 14px
 
 body
@@ -26,7 +26,7 @@ main
   padding: 0
   //overflow-y: auto
 
- 
+  @media #{$mat-xs}
     padding: 0
 
 article
@@ -37,7 +37,7 @@ h1, .h1
   margin-bottom: 1rem
   display: inline-block
 
- 
+  @media #{$mat-xs}
     font-size: 3rem
     line-height: 0.85em
 
@@ -46,11 +46,11 @@ h2, h3, h4, h5, h6, .h2, .h3, .h4, .h5, .h6
   font-size: 25px
   margin-bottom: 1em
 
- 
+  @media #{$mat-xs}
     font-size: 18px
 
 p
- 
+  @media #{$mat-xs}
     line-height: 1.5em
 
   &:last-of-type
@@ -85,7 +85,7 @@ img, video, audio
   left: 50%
   transform: translate(-50%, 0)
 
- 
+  @media #{$mat-xs}
     width: 100%
     max-width: 100%
     left: 0
@@ -191,7 +191,7 @@ i
     left: calc((3rem + 20px) * -1)
     margin: 0 1.5rem
 
-   
+    @media #{$mat-xs}
       left: -1em
       bottom: 1.5em
       margin: 0 5px

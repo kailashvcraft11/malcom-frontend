@@ -2,8 +2,8 @@ import {Component, Inject, isDevMode, OnInit} from '@angular/core';
 import {FormGroup, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ApiService} from '../services/api.service';
 import {DomSanitizer} from '@angular/platform-browser';
-import {LOCAL_STORAGE, WebStorageService} from 'ngx-webstorage-service';import {MatDialog, MatDialogRef} from '@angular/material/dialog';
-import {MatSnackBar} from '@angular/material/snack-bar';
+import {LOCAL_STORAGE, WebStorageService} from 'angular-webstorage-service';
+import {MatDialog, MatDialogRef, MatSnackBar} from '@angular/material';
 import {NavigationService} from '../services/navigation.service';
 import {environment} from '../../environments/environment';
 

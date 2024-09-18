@@ -1,7 +1,6 @@
 import {Component, ViewContainerRef, ViewEncapsulation, Inject, OnInit} from '@angular/core';
 import {FormGroup} from '@angular/forms';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import {MatSnackBar} from '@angular/material/snack-bar';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatSnackBar} from '@angular/material';
 import {ApiService} from '../../../services/api.service';
 import {ResponseInterface} from '../../../interfaces/response.interface';
 

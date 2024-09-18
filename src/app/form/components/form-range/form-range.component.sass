@@ -1,11 +1,11 @@
-// @import "../../../../assets/sass/mobile"
+@import "../../../../assets/sass/mobile"
 
 .fieldset-wrapper
   text-align: left
   width: 70%
   margin: 0 auto
 
- 
+  @media #{$mat-xs}
     width: 100%
 
 fieldset
@@ -17,7 +17,7 @@ fieldset
     &:first-child
       width: 65%
 
-     
+      @media #{$mat-xs}
         width: 50%
 
   .mat-slider

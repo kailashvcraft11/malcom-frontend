@@ -3,7 +3,8 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {MatSnackBar} from '@angular/material/snack-bar';
 
-import {LOCAL_STORAGE, WebStorageService} from 'ngx-webstorage-service';import {ApiService} from '../../../services/api.service';
+import {LOCAL_STORAGE, WebStorageService} from 'angular-webstorage-service';
+import {ApiService} from '../../../services/api.service';
 import {NavigationService} from '../../../services/navigation.service';
 import {LoginService} from '../../../services/login.service';
 import {ErrorMessage} from '../../../utils/error-message';

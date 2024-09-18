@@ -1,7 +1,8 @@
 import {Injectable, Inject} from '@angular/core';
 import {ApiService} from './api.service';
 import {ResponseInterface} from '../interfaces/response.interface';
-import {LOCAL_STORAGE, SESSION_STORAGE, WebStorageService} from 'ngx-webstorage-service';import {FormGroup} from '@angular/forms';
+import {LOCAL_STORAGE, SESSION_STORAGE, WebStorageService} from 'angular-webstorage-service';
+import {FormGroup} from '@angular/forms';
 import {Request} from '../request';
 
 @Injectable({

@@ -1,7 +1,8 @@
 import {Inject, Injectable, isDevMode} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {BehaviorSubject, Observable, Subject, of} from 'rxjs';
-import {LOCAL_STORAGE, WebStorageService} from 'ngx-webstorage-service';
+import {LOCAL_STORAGE, WebStorageService} from 'angular-webstorage-service';
+import {delay} from 'rxjs/operators';
 import {environment} from '../../environments/environment';
 
 // import {REQUEST} from '../mocks/mock-api';
